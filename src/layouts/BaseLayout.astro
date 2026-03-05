@@ -1,0 +1,35 @@
+---
+import "../styles/global.css";
+
+const { title = "Sahil Arora | Technology Leader", description } = Astro.props;
+
+const metaDescription =
+  description ??
+  "Sahil Arora — Technology Leader, Cloud Enterprise Architect, and AI Transformation Leader focused on Automation, Governance, and IT/OT Alignment.";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={metaDescription} />
+  </head>
+
+  <body class="min-h-screen bg-zinc-950 text-zinc-100 antialiased selection:bg-white/15 selection:text-white">
+    <!-- Premium Background (Layout-only) -->
+    <div class="pointer-events-none fixed inset-0">
+      <div class="absolute inset-0 bg-zinc-950"></div>
+      <div class="absolute -top-40 left-[-10%] h-[520px] w-[520px] rounded-full bg-blue-500/15 blur-3xl"></div>
+      <div class="absolute -top-48 right-[-10%] h-[520px] w-[520px] rounded-full bg-fuchsia-500/10 blur-3xl"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(1200px_circle_at_50%_-10%,rgba(255,255,255,0.08),transparent_60%)]"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.02),transparent_35%,rgba(0,0,0,0.35))]"></div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="relative">
+      <slot />
+    </div>
+  </body>
+</html>
