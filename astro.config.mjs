@@ -4,4 +4,5 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://sahilarora.tech",
   integrations: [sitemap()],
+  output: "static"
 });
