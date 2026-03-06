@@ -1,11 +1,22 @@
 ---
 import "../styles/global.css";
 
-const { title = "Sahil Arora | Technology Leader", description } = Astro.props;
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+}
 
-const metaDescription =
-  description ??
-  "Sahil Arora — Technology Leader, Cloud Enterprise Architect, and AI Transformation Leader focused on Automation, Governance, and IT/OT Alignment.";
+const {
+  title = "Sahil Arora | Technology Leader, Cloud Architect & AI Transformation Leader",
+  description = "Sahil Arora is a technology leader specializing in cloud architecture, AI transformation, enterprise strategy, automation, governance, and IT/OT alignment across industries.",
+  canonical = "https://sahilarora.tech/",
+  ogImage = "https://sahilarora.tech/og-image.png",
+} = Astro.props;
+
+const siteName = "Sahil Arora";
+const gaId = import.meta.env.PUBLIC_GA_ID;
 ---
 
 <!doctype html>
@@ -13,12 +24,74 @@ const metaDescription =
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>{title}</title>
-    <meta name="description" content={metaDescription} />
+    <meta name="description" content={description} />
+    <meta name="author" content="Sahil Arora" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#09090b" />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Structured Data -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Sahil Arora",
+        url: "https://sahilarora.tech/",
+        image: "https://sahilarora.tech/images/sahil.jpg",
+        jobTitle: "Technology Leader",
+        email: "mailto:sahila99@gmail.com",
+        sameAs: [
+          "https://www.linkedin.com/in/sahil-arora-38263b158"
+        ],
+        knowsAbout: [
+          "Cloud Architecture",
+          "AI Transformation",
+          "Enterprise Technology Strategy",
+          "Automation",
+          "Cybersecurity Governance",
+          "IT/OT Alignment"
+        ]
+      })}
+    />
+
+    <!-- Google Analytics 4 -->
+    {gaId && (
+      <>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+        ></script>
+        <script is:inline define:vars={{ gaId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', gaId);
+        </script>
+      </>
+    )}
   </head>
 
   <body class="min-h-screen bg-zinc-950 text-zinc-100 antialiased selection:bg-white/15 selection:text-white">
-    <!-- Premium Background (Layout-only) -->
     <div class="pointer-events-none fixed inset-0">
       <div class="absolute inset-0 bg-zinc-950"></div>
       <div class="absolute -top-40 left-[-10%] h-[520px] w-[520px] rounded-full bg-blue-500/15 blur-3xl"></div>
@@ -27,7 +100,6 @@ const metaDescription =
       <div class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.02),transparent_35%,rgba(0,0,0,0.35))]"></div>
     </div>
 
-    <!-- Page Content -->
     <div class="relative">
       <slot />
     </div>
