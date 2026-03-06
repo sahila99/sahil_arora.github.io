@@ -1,11 +1,14 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineConfig({
   site: "https://sahilarora.tech",
   output: "static",
   integrations: [sitemap()],
-  build: {
-    assets: "_astro"
-  }
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
