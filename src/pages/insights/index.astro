@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const articles = [
+  {
+    title: "AI Transformation Strategy for Enterprises",
+    desc: "How organizations can move from AI experimentation to scalable transformation programs.",
+    link: "/insights/ai-transformation-strategy"
+  },
+  {
+    title: "Cloud Enterprise Architecture in Modern Organizations",
+    desc: "Designing cloud platforms that balance innovation, governance, cost control, and resilience.",
+    link: "/insights/cloud-enterprise-architecture"
+  },
+  {
+    title: "IT/OT Convergence in Industrial Enterprises",
+    desc: "Why aligning IT and operational technology is critical for reliability, security, and operational efficiency.",
+    link: "/insights/it-ot-convergence"
+  }
+];
+---
+
+<BaseLayout title="Insights | Sahil Arora">
+
+<main class="mx-auto max-w-5xl px-6 py-20">
+
+<div class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+Insights
+</div>
+
+<h1 class="mt-4 text-4xl font-semibold tracking-tight">
+Technology Leadership Insights
+</h1>
+
+<p class="mt-4 text-zinc-300 max-w-2xl">
+Thoughts on enterprise architecture, AI transformation, cloud strategy, and operational technology alignment.
+</p>
+
+<div class="mt-12 grid gap-6">
+
+{articles.map((a) => (
+<div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+
+<h2 class="text-xl font-semibold">{a.title}</h2>
+
+<p class="mt-2 text-zinc-400">
+{a.desc}
+</p>
+
+<a
+href={a.link}
+class="mt-4 inline-block text-sm text-blue-400 hover:text-blue-300"
+>
+Read article →
+</a>
+
+</div>
+))}
+
+</div>
+
+</main>
+
+</BaseLayout>
