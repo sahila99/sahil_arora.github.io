@@ -1,167 +1,240 @@
 ---
-
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const name = "Sahil Arora";
-const email = "[sahila99@gmail.com](mailto:sahila99@gmail.com)";
+const email = "sahila99@gmail.com";
 const linkedin = "https://www.linkedin.com/in/sahil-arora-38263b158";
 
 /* UI helpers */
 const card =
-"rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:-translate-y-0.5 transition";
+  "rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:-translate-y-0.5 transition";
 const softCard =
-"rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:-translate-y-0.5 transition";
+  "rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:-translate-y-0.5 transition";
 const divider = "my-16 h-px w-full bg-white/10";
 
-/* Positioning (Senior + Consultant) */
-const whatYouCanExpect = [
-"Enterprise Transformation And Technology Strategy",
-"Cloud Enterprise Architecture",
-"AI Transformation Leadership",
-"AI Strategy And Operating Model",
-"AI Workflow Architecture And Orchestration",
-"Automation And Process Standardization",
-"IT/OT Alignment For Operational Excellence",
-"Cybersecurity Governance And Risk Reduction",
-"Enterprise Platforms And ERP Systems",
-];
-
-const industriesLine =
-"Technology Leadership Experience Across Multiple Industries Including FinTech, Manufacturing, Healthcare, FMCG, Mining, Agriculture, Aviation, Automobile, And Enterprise Sectors.";
-
 const focusAreas = [
-{ title: "Enterprise Technology Strategy", desc: "Translate Business Priorities Into A Clear Roadmap, Target Architecture, And Measurable Outcomes." },
-{ title: "Cloud Enterprise Architecture", desc: "Design Scalable Cloud Platforms With Reliability, Cost Governance, Security, And Performance Built In." },
-{ title: "AI Transformation Leadership", desc: "Enable AI Adoption To Improve Efficiency, Decision-Making, And Profitability Through Practical Use Cases." },
-{ title: "AI Workflow Architecture", desc: "Design AI-Driven Workflows That Automate Work, Connect Systems, And Improve Operational Consistency." },
-{ title: "AI Orchestration", desc: "Orchestrate AI Tools, Agents, And Automation Across Processes So Outcomes Are Repeatable And Governed." },
-{ title: "IT/OT Convergence", desc: "Align IT And OT To Improve Visibility, Reliability, Downtime Reduction, And Site-Level Performance." },
-{ title: "Cybersecurity Governance", desc: "Strengthen Risk Management, Monitoring, Incident Readiness, And Audit Posture Without Slowing Delivery." },
-{ title: "Enterprise Platforms (ERP) And Integration", desc: "Enable Connected Operations Through ERP, Integrations, And Decision-Grade Reporting." },
+  { title: "Enterprise Technology Strategy", desc: "Translate business priorities into a clear roadmap, target architecture, and measurable outcomes." },
+  { title: "Cloud Enterprise Architecture", desc: "Design scalable cloud platforms with reliability, cost governance, security, and performance built in." },
+  { title: "AI Transformation Leadership", desc: "Enable AI adoption to improve efficiency, decision-making, and profitability through practical use cases." },
+  { title: "AI Workflow Architecture", desc: "Design AI-driven workflows that automate work, connect systems, and improve operational consistency." },
+  { title: "AI Orchestration", desc: "Orchestrate AI tools, agents, and automation across processes so outcomes are repeatable and governed." },
+  { title: "IT/OT Convergence", desc: "Align IT and OT to improve visibility, reliability, downtime reduction, and site-level performance." },
+  { title: "Cybersecurity Governance", desc: "Strengthen risk management, monitoring, incident readiness, and audit posture without slowing delivery." },
+  { title: "Enterprise Platforms (ERP) and Integration", desc: "Enable connected operations through ERP, integrations, and decision-grade reporting." },
 ];
 
+const transformations = [
+  {
+    title: "Infrastructure and platform modernization",
+    body: "Simplified legacy infrastructure, standardized platforms, and strengthened governance to reduce complexity and improve reliability.",
+    outcome: "Outcome: Reduced operating costs by approximately 25% while improving stability across enterprise systems.",
+  },
+  {
+    title: "Cybersecurity governance and monitoring",
+    body: "Improved governance, monitoring, and response readiness to strengthen security posture and risk control.",
+    outcome: "Outcome: Improved detection capability by approximately 40% and enhanced organizational readiness.",
+  },
+  {
+    title: "Enterprise digital workplace transformation",
+    body: "Enabled collaboration platforms and adoption programs to improve productivity and cross-functional execution.",
+    outcome: "Outcome: Enabled over 5,000 users with modern collaboration tools and improved operational efficiency.",
+  },
+];
+
+const principles = [
+  { t: "Business outcomes drive technology decisions", d: "I start with business goals and build the systems, controls, and roadmap needed to deliver measurable value." },
+  { t: "Governance should enable speed", d: "Decision rights, standards, and controls reduce risk while keeping teams fast and execution predictable." },
+  { t: "Automation improves efficiency and profitability", d: "I reduce manual dependency through automation, standardization, and platforms that scale across operations." },
+  { t: "IT/OT alignment builds real operational advantage", d: "When IT and OT work together, reliability improves, downtime reduces, and performance becomes visible and actionable." },
+];
 ---
 
 <BaseLayout
-title="Sahil Arora | Technology Leader, Cloud Architect & AI Transformation Leader"
-description="Sahil Arora is a technology leader focused on cloud architecture, AI transformation, enterprise technology strategy, automation, governance, and IT/OT alignment."
-canonical="https://sahilarora.tech/"
-ogImage="https://sahilarora.tech/og-image.png"
-
+  title="Sahil Arora | Technology Leader, Cloud Architect & AI Transformation Leader"
+  description="Sahil Arora is a technology leader focused on cloud architecture, AI transformation, enterprise technology strategy, automation, governance, and IT/OT alignment."
+  canonical="https://sahilarora.tech/"
+  ogImage="https://sahilarora.tech/og-image.png"
 >
+  <a
+    href="/resume.pdf"
+    target="_blank"
+    class="hidden md:flex fixed right-6 bottom-6 z-30 items-center gap-2 rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white backdrop-blur-sm hover:bg-white/20 transition"
+  >
+    Resume
+  </a>
 
-<header class="sticky top-0 z-20 border-b border-white/10 bg-zinc-950/40 backdrop-blur">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-8">
-    <div class="font-semibold tracking-tight">{name}</div>
+  <header class="sticky top-0 z-20 border-b border-white/10 bg-zinc-950/40 backdrop-blur shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-8">
+      <div class="font-semibold tracking-tight">{name}</div>
 
-```
-<nav class="hidden gap-6 text-sm text-zinc-300 md:flex">
-  <a href="#focus" class="hover:text-white transition">Focus</a>
-  <a href="#contact" class="hover:text-white transition">Contact</a>
-  <a href="/resume.pdf" target="_blank" class="hover:text-white transition">Resume</a>
-</nav>
-```
+      <nav class="hidden gap-6 text-sm text-zinc-300 md:flex">
+        <a href="#focus" class="hover:text-white transition">Focus</a>
+        <a href="#transformations" class="hover:text-white transition">Transformations</a>
+        <a href="#principles" class="hover:text-white transition">Principles</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+        <a href="/resume.pdf" target="_blank" class="hover:text-white transition">Resume</a>
+      </nav>
+    </div>
+  </header>
 
-  </div>
-</header>
+  <main class="mx-auto max-w-6xl px-6 md:px-8">
+    <section class="py-20 md:py-24">
+      <div class="grid gap-10 md:grid-cols-2 md:items-start">
+        <div>
+          <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-zinc-300 backdrop-blur-sm shadow-sm">
+            Enterprise Transformation • Cloud Architecture • AI Strategy • Automation • Governance • IT/OT Systems
+          </p>
 
-<main class="mx-auto max-w-6xl px-6 md:px-8">
+          <h1 class="mt-6 text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight max-w-2xl">
+            Technology leader for cloud, AI, and enterprise transformation.
+          </h1>
 
-<section class="py-20 md:py-24">
+          <p class="mt-4 text-lg text-zinc-300 max-w-2xl leading-relaxed">
+            I help enterprises modernize cloud architecture, lead AI transformation, improve governance, and align IT/OT systems to deliver measurable business outcomes.
+          </p>
 
-<p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-zinc-300 backdrop-blur-sm">
-Enterprise Transformation • Cloud Architecture • AI Strategy • Automation • Governance • IT/OT Systems
-</p>
+          <p class="mt-5 max-w-xl text-sm leading-relaxed text-zinc-400">
+            My work focuses on scalable systems, operating models, and transformation programs that reduce cost, improve productivity, strengthen security, and create better operational performance.
+          </p>
 
-<h1 class="mt-6 text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight max-w-2xl">
-Technology leader for cloud, AI, and enterprise transformation.
-</h1>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href={`mailto:${email}`} class="rounded-xl bg-white px-5 py-3 text-sm font-medium text-zinc-900 hover:bg-zinc-200 transition">
+              Email
+            </a>
 
-<p class="mt-4 text-lg text-zinc-300 max-w-2xl leading-relaxed">
-I help enterprises modernize cloud architecture, lead AI transformation, improve governance, and align IT/OT systems to deliver measurable business outcomes.
-</p>
+            <a href={linkedin} target="_blank" class="rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm text-white hover:bg-white/10 transition">
+              LinkedIn
+            </a>
 
-<div class="mt-8 flex flex-wrap gap-3">
-<a href={`mailto:${email}`} class="rounded-xl bg-white px-5 py-3 text-sm font-medium text-zinc-900 hover:bg-zinc-200 transition">
-Email
-</a>
+            <a href="/resume.pdf" target="_blank" class="rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm text-white hover:bg-white/10 transition">
+              Resume
+            </a>
+          </div>
+        </div>
 
-<a href={linkedin} target="_blank" class="rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm text-white hover:bg-white/10 transition">
-LinkedIn
-</a>
+        <div>
+          <div class={"p-6 " + card + " shadow-[0_10px_40px_rgba(0,0,0,0.35)]"}>
+            <div class="flex items-center gap-5">
+              <img
+                src="/images/sahil.jpg"
+                alt="Portrait of Sahil Arora"
+                class="h-24 w-24 rounded-3xl object-cover border border-white/10 shadow-lg"
+                loading="lazy"
+                onerror="this.style.display='none'"
+              />
 
-<a href="/resume.pdf" target="_blank" class="rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm text-white hover:bg-white/10 transition">
-Resume
-</a>
-</div>
+              <div class="min-w-0">
+                <div class="text-xl font-semibold tracking-tight">{name}</div>
+                <div class="mt-1 text-sm text-zinc-400">
+                  Technology leader • Cloud architect • AI transformation • IT/OT alignment
+                </div>
+              </div>
+            </div>
 
-</section>
+            <div class="mt-5 space-y-2 text-sm text-zinc-400">
+              <div>
+                <span class="text-zinc-300">Email:</span>{" "}
+                <a class="underline underline-offset-4 hover:text-white" href={`mailto:${email}`}>
+                  {email}
+                </a>
+              </div>
+              <div>
+                <span class="text-zinc-300">LinkedIn:</span>{" "}
+                <a class="underline underline-offset-4 hover:text-white" href={linkedin} target="_blank">
+                  sahil-arora-38263b158
+                </a>
+              </div>
+            </div>
 
-<div class={divider}></div>
+            <div class="mt-6 border-t border-white/10 pt-5 text-sm text-zinc-300">
+              Technology leadership experience across multiple industries including FinTech, manufacturing, healthcare, FMCG, mining, agriculture, aviation, automobile, and enterprise sectors.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="focus" class="pb-20 scroll-mt-28">
+    <div class={divider}></div>
 
-<div class="text-xs uppercase tracking-[0.2em] text-zinc-500">
-Strategic Focus Areas
-</div>
+    <section id="focus" class="pb-20 scroll-mt-28">
+      <div class="text-xs uppercase tracking-[0.2em] text-zinc-500">Strategic focus areas</div>
+      <h2 class="mt-4 text-2xl font-semibold tracking-tight">Where I drive transformation</h2>
+      <p class="mt-3 max-w-3xl text-sm leading-relaxed text-zinc-300">
+        A business-first approach focused on systems, governance, automation, and practical transformation across enterprise technology and operations.
+      </p>
 
-<h2 class="mt-4 text-2xl font-semibold tracking-tight">
-Where I Drive Transformation
-</h2>
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        {focusAreas.map((f) => (
+          <div class={"p-6 " + card}>
+            <div class="text-sm font-semibold">{f.title}</div>
+            <p class="mt-2 text-sm leading-relaxed text-zinc-400">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-<div class="mt-8 grid gap-4 md:grid-cols-2">
+    <div class={divider}></div>
 
-{focusAreas.map((f) => (
+    <section id="transformations" class="pb-20 scroll-mt-28">
+      <div class="text-xs uppercase tracking-[0.2em] text-zinc-500">Transformation examples</div>
+      <h2 class="mt-4 text-2xl font-semibold tracking-tight">Selected transformation outcomes</h2>
 
-<div class={"p-6 " + card}>
-<div class="text-sm font-semibold">{f.title}</div>
-<p class="mt-2 text-sm leading-relaxed text-zinc-400">{f.desc}</p>
-</div>
-))}
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {transformations.map((x) => (
+          <div class={"p-6 " + card}>
+            <div class="text-sm font-semibold">{x.title}</div>
+            <p class="mt-3 text-sm text-zinc-400">{x.body}</p>
+            <p class="mt-3 text-sm text-zinc-300">{x.outcome}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-</div>
+    <div class={divider}></div>
 
-</section>
+    <section id="principles" class="pb-20 scroll-mt-28">
+      <div class="text-xs uppercase tracking-[0.2em] text-zinc-500">Leadership principles</div>
+      <h2 class="mt-4 text-2xl font-semibold tracking-tight">How I lead</h2>
 
-<div class={divider}></div>
+      <div class="mt-8 max-w-3xl space-y-5">
+        {principles.map((p) => (
+          <div class={"p-5 " + softCard}>
+            <div class="text-sm font-semibold">{p.t}</div>
+            <p class="mt-2 text-sm leading-relaxed text-zinc-300">{p.d}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-<section id="contact" class="pb-24 scroll-mt-28">
+    <div class={divider}></div>
 
-<div class="text-xs uppercase tracking-[0.2em] text-zinc-500">
-Contact
-</div>
+    <section id="contact" class="pb-24 scroll-mt-28">
+      <div class="text-xs uppercase tracking-[0.2em] text-zinc-500">Contact</div>
+      <h2 class="mt-4 text-2xl font-semibold tracking-tight">Let’s connect</h2>
 
-<h2 class="mt-4 text-2xl font-semibold tracking-tight">
-Let’s Connect
-</h2>
+      <p class="mt-4 max-w-xl text-zinc-300 leading-relaxed">
+        Open to senior technology leadership opportunities, cloud and AI transformation programs, IT/OT modernization, and strategic consulting engagements.
+      </p>
 
-<p class="mt-4 max-w-xl text-zinc-300 leading-relaxed">
-Open to senior technology leadership opportunities, cloud and AI transformation programs, IT/OT modernization, and strategic consulting engagements.
-</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href={`mailto:${email}`} class="rounded-xl bg-white px-5 py-3 text-sm font-medium text-zinc-900 hover:bg-zinc-200 transition">
+          Email
+        </a>
 
-<div class="mt-7 flex flex-wrap gap-3">
+        <a href={linkedin} target="_blank" class="rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm text-white hover:bg-white/10 transition">
+          LinkedIn
+        </a>
 
-<a href={`mailto:${email}`} class="rounded-xl bg-white px-5 py-3 text-sm font-medium text-zinc-900 hover:bg-zinc-200 transition">
-Email </a>
+        <a href="/resume.pdf" target="_blank" class="rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm text-white hover:bg-white/10 transition">
+          Resume
+        </a>
+      </div>
+    </section>
+  </main>
 
-<a href={linkedin} target="_blank" class="rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm text-white hover:bg-white/10 transition">
-LinkedIn
-</a>
-
-<a href="/resume.pdf" target="_blank" class="rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm text-white hover:bg-white/10 transition">
-Resume
-</a>
-
-</div>
-
-</section>
-
-</main>
-
-<footer class="border-t border-white/10">
-<div class="mx-auto max-w-6xl px-6 py-6 text-xs text-zinc-400 md:px-8">
-© {new Date().getFullYear()} {name}
-</div>
-</footer>
-
+  <footer class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-6 py-6 text-xs text-zinc-400 md:px-8">
+      © {new Date().getFullYear()} {name}
+    </div>
+  </footer>
 </BaseLayout>
