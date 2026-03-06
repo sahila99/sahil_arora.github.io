@@ -3,6 +3,9 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://sahilarora.tech",
+  output: "static",
   integrations: [sitemap()],
-  output: "static"
+  build: {
+    assets: "_astro"
+  }
 });
