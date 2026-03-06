@@ -1,0 +1,110 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const projects = [
+  {
+    title: "Cloud Infrastructure Modernization",
+    summary:
+      "Modernized legacy infrastructure into a scalable cloud-aligned platform with stronger governance, reliability, and cost control.",
+    impact:
+      "Reduced operating costs by 25% while improving resilience and platform stability.",
+    areas: [
+      "Cloud Architecture",
+      "Infrastructure Modernization",
+      "Governance",
+      "Cost Optimization"
+    ]
+  },
+  {
+    title: "Cybersecurity Governance and Monitoring Uplift",
+    summary:
+      "Strengthened enterprise security posture through governance frameworks, monitoring improvements, and risk management alignment.",
+    impact:
+      "Improved threat detection capability by 40% and increased organizational security readiness.",
+    areas: [
+      "Cybersecurity Governance",
+      "Risk Management",
+      "Monitoring",
+      "Operational Resilience"
+    ]
+  },
+  {
+    title: "Enterprise Digital Workplace Transformation",
+    summary:
+      "Enabled modern collaboration platforms and adoption programs to improve productivity, communication, and execution across the organization.",
+    impact:
+      "Enabled 5,000+ employees with modern collaboration capabilities and improved workforce efficiency.",
+    areas: [
+      "Digital Workplace",
+      "Adoption",
+      "Collaboration",
+      "Productivity"
+    ]
+  },
+  {
+    title: "IT/OT Alignment for Operational Visibility",
+    summary:
+      "Improved visibility between enterprise technology and operational systems to strengthen reliability, coordination, and decision-making.",
+    impact:
+      "Created a stronger foundation for operational performance, monitoring, and technology-led transformation.",
+    areas: [
+      "IT/OT Alignment",
+      "Operational Visibility",
+      "Reliability",
+      "Transformation Strategy"
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Work | Sahil Arora"
+  description="A portfolio of enterprise transformation, cloud architecture, cybersecurity governance, digital workplace, and IT/OT alignment initiatives led by Sahil Arora."
+  canonical="https://sahilarora.tech/work"
+  ogImage="https://sahilarora.tech/og-image.png"
+>
+  <main class="mx-auto max-w-6xl px-6 py-20">
+    <div class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+      Work
+    </div>
+
+    <h1 class="mt-4 text-4xl font-semibold tracking-tight">
+      Transformation portfolio
+    </h1>
+
+    <p class="mt-4 max-w-3xl text-zinc-300 leading-relaxed">
+      Selected examples of enterprise transformation work across cloud architecture, cybersecurity, digital workplace, and IT/OT alignment. Each initiative focused on measurable business outcomes, stronger governance, and scalable operating models.
+    </p>
+
+    <div class="mt-12 grid gap-6">
+      {projects.map((project) => (
+        <section class="rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm hover:bg-white/10 transition">
+          <h2 class="text-2xl font-semibold tracking-tight">
+            {project.title}
+          </h2>
+
+          <p class="mt-4 text-zinc-400 leading-relaxed">
+            {project.summary}
+          </p>
+
+          <div class="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div class="text-xs uppercase tracking-[0.2em] text-zinc-500">
+              Impact
+            </div>
+            <p class="mt-2 text-zinc-200 leading-relaxed">
+              {project.impact}
+            </p>
+          </div>
+
+          <div class="mt-5 flex flex-wrap gap-2">
+            {project.areas.map((area) => (
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">
+                {area}
+              </span>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </main>
+</BaseLayout>
